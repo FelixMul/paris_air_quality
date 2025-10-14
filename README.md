@@ -1,1 +1,2 @@
-# paris_air_quality
+# Paris Air Quality Kaggle competition
+
