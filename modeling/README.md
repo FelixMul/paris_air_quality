@@ -6,12 +6,15 @@ This directory contains the flexible modeling framework for air quality predicti
 
 ```
 modeling/
-├── flexible_air_quality_model.py    # Main flexible model
-├── predictions/                     # Generated predictions
-│   ├── experiment_time_only.csv     # Time features only
-│   ├── experiment_with_weather.csv  # With weather features
-│   └── simplified_time_submission.csv # Main submission
-└── README.md                       # This file
+├── flexible_air_quality_model.py           # Main flexible model
+├── flexible_air_quality_model_finetuned.py # Enhanced XGBoost with fine-tuning
+├── flexible_air_quality_model_lightgbm.py  # LightGBM alternative
+├── predictions/                            # Generated predictions
+│   ├── experiment_time_only.csv           # Time features only
+│   ├── experiment_with_weather.csv        # With weather features
+│   ├── simplified_time_submission.csv     # Main submission
+│   └── kaggle_submission_fixed.csv        # Best Kaggle submission
+└── README.md                              # This file
 ```
 
 ## 🚀 Quick Start
@@ -56,9 +59,17 @@ python flexible_air_quality_model.py
 
 ## 📈 Generated Predictions
 
+- `kaggle_submission_fixed.csv` - **Best submission** (fine-tuned XGBoost)
 - `simplified_time_submission.csv` - Main submission (time features only)
 - `experiment_time_only.csv` - Time features experiment
 - `experiment_with_weather.csv` - Weather features experiment
+
+## 🏆 Best Model
+
+The **fine-tuned XGBoost model** (`flexible_air_quality_model_finetuned.py`) achieved the best performance:
+- **Validation MAE**: ~0.42
+- **Features**: Basic time features (hour, day, month, etc.)
+- **Techniques**: Temporal validation, hyperparameter optimization, early stopping
 
 ## 🔧 Customization
 
